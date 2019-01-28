@@ -4,10 +4,14 @@ require 'sinatra/partial'
 require 'google/apis/sheets_v4'
 require 'signet/oauth_2/client'
 require 'dotenv/load'
+require 'sass'
 
 # Sinatra partial config
 set :partial_template_engine, :erb
 enable :partial_underscores
+
+# Sass style sheet
+get('/styles.css'){ scss :styles }
 
 get '/' do
 	drive_setup
