@@ -6,10 +6,10 @@
 	</div>
 
 	<div class="row">
-		<div class="col-sm-7">
+		<div class="col-xs-10 col-xs-offset-1 col-sm-7 col-sm-offset-0">
 			<%= spotify_link_album_cover(record_data[@last_week_index]) %>
 		</div>
-		<div class="col-sm-5">
+		<div class="col-sm-5 col-xs-12">
 			<% unless record_data[@last_week_index][6].nil? %>
 				<p class="commentary"><span class="who"><%= who %> sez </span> <span class="quote">"<%= record_data[@last_week_index][6] %>"</span></p>
 			<% end %>	
