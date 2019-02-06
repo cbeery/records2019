@@ -1,0 +1,11 @@
+<div class="col-sm-6">
+	
+	<div class="row">
+		<div class="col-sm-12">
+			<p class="listening"><%= who %> is listening to <span class="record"><%= record_data[@this_week_index] [4] %></span> by <span class="artist"><%= record_data[@this_week_index][3] %></span> <span class="year">(<%= record_data[@this_week_index][5] %>)</span></p>
+			<p><%= spotify_link_album_cover(record_data[@this_week_index]) %></p>
+		</div>
+	</div>
+
+
+</div>

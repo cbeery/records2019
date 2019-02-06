@@ -1,50 +1,10 @@
 <%= partial :header %>
 
-<%= partial :this_week %>
+<%= partial :this_week if @show_this_week %>
 <%= partial :last_week %>
+<%= partial :third_level %>
+<%= partial :fourth_level unless @cb_data[@fourth_level_indices].nil? %>
 
-<div class="container">
-	<div class="row">
-		<div class="col-sm-4">
-			<%= @cb_data.inspect %>
-			
-		</div>
-		
-		<div class="col-sm-4">
-			<p><span class="fab fa-spotify"></span></p>
-			<% @hef_data.each do |record| %>
-				<div class="row">
-					<div class="col-sm-6 col-sm-offet-2">
-						<!-- <img src="<%# record[10] %>" class="img img-responsive img-thumbnail"/> -->
-					</div>
-				</div>
-
-			<% end %>
-		</div>
-
-		<div class="col-sm-4">
-			<%# @cb_data.values[0..5] %>		
-			<%# @cb_data.values.select{|v| !v[3].nil?} %>
-			<% @cb_data.each do |record| %>
-				<p><%= record[4] %></p>
-				<!-- <p><img src="<%# record[10] %>"" class="img img-responsive img-thumbnail"/></p> -->
-			<% end %>
-			<p>Latest week of data: <%= @latest_week_of_data %></p>
-			<p>Current week: <%= @current_week %></p>
-
-			<p>This week: <%= @this_week_index %></p>
-			<p>Last week: <%= @last_week_index %></p>
-			<p>Level 3: <%= @third_level_indices %></p>
-			<p>Level 4: <%= @fourth_level_indices %></p>
-
-			<p>Show this week?: <%= @show_this_week %></p>
-
-
-
-		</div>
-	</div>
-</div>
-
-
+<%# partial :the_beginning %>
 
 <%= partial :footer %>

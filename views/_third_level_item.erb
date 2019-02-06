@@ -1,0 +1,23 @@
+<div class="third-level-item">
+	<div class="row">
+
+		<div class="col-sm-4">
+			<%= spotify_link_album_cover(third_level_item) %>
+		</div>
+		<div class="col-sm-8">
+
+			<p>
+				<span class="artist"><%= third_level_item[3] %></span>
+				<span class="album"><%= third_level_item[4] %></span>
+				<span class="year"><%= third_level_item[5] %></span>
+				
+					
+			</p>
+
+			<% unless third_level_item[6].empty? %>
+				<p class="commentary"><span class="who"><%= who %> sez </span> <span class="quote">"<%= third_level_item[6] %>"</span></p>
+			<% end %>	
+		</div>
+
+	</div>
+</div>

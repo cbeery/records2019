@@ -25,16 +25,18 @@ get '/' do
 	cb_latest_week_of_data = @cb_data[0][0] # first row (reversed), first column
 	hef_latest_week_of_data = @hef_data[0][0]
 	@latest_week_of_data = [cb_latest_week_of_data, hef_latest_week_of_data].min.to_i
-	@current_week = Date.today.cweek
+	@current_week = Date.today.cweek # Week starts on Monday
+	# @current_week = Date.today.cweek + (Date.today.sunday? ? 1 : 0)
+	@current_week = 6
 
 	# Define this_week_index for first row of data to use (normally This/Current Week)
 	# this_week_index is latest week of data - current week, unless that's less than -1
 	@this_week_index = [(@latest_week_of_data - @current_week), -1].max
 	@last_week_index = @this_week_index + 1
 
-	@third_level_display_count = 1 # Number to show at third level ("Recently...")
+	@third_level_display_count = 5 # Number to show at third level ("Recently...")
 	@third_level_indices = ((@last_week_index + 1)..(@last_week_index + @third_level_display_count))
-	@fourth_level_indices = ((@last_week_index + @third_level_display_count + 1)..52) # max in 52 weeks
+	@fourth_level_indices = ((@last_week_index + @third_level_display_count + 1)..52) # max is 52 weeks
 
 	# Don't show this week if current week later than last week of data
 	@show_this_week = @this_week_index >= 0 
@@ -43,9 +45,15 @@ get '/' do
 end
 
 helpers do
-	def crap
-		"shit"
+
+	def spotify_link_album_cover(record_data_row)
+		%Q{<a href="#{record_data_row[9]}" title="#{record_data_row[4]}"><img src="#{record_data_row[10]}" class="img img-responsive img-thumbnail"/></a>}
 	end
+
+	def spotify_link(record_data_row)
+		%Q{<a href="#{record_data_row[9]}" title="#{record_data_row[4]}">#{record_data_row[4]}</a>}
+	end
+
 end
 
 private

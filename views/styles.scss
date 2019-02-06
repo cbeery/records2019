@@ -1,28 +1,126 @@
+$start-here-color:				#775d85;
+$header-color:						$start-here-color;
+$this-week-color:					lighten($start-here-color, 25%);
+$ass: #804b4c;
+
 body {
 	background: #fff;
 }
 
 #header {
-	background: #074080;
+	background: $header-color;
 	color: white;
+	h1 {
+		font-weight: bold;
+		font-size: 2em;
+	}	
 }
 
 #this_week {
-
+	padding: 30px 0 60px 0;
+	p.listening {
+		min-height: 3em;
+	}
 }
 
 #last_week {
+	background: #efefef;
+	padding: 70px 0;
+	div.info {
+		min-height: 9em;
+	}
 
+	p {
+		line-height: 1.5em;
+	}
+	.record {
+		font-weight: bold;
+		font-size: 1.5em;
+	}
+	.artist {
+		font-size: 1.2em;
+		font-weight: bold;
+		color: #666;
+	}
+	hr {
+		border-color: #ccc;
+	}
 }
 
 #third_level {
-
+	padding: 50px 0 0 0;
+	.third-level-item {
+		min-height: 18em;
+	}
+	span.artist {
+		font-weight: bold;
+		color: #666;
+	}
+	span.album {
+		font-style: italic;
+	}
 }
 
 #fourth_level {
+	// background: #ededef;
+	padding: 60px;
+	h2 {
+		color: #888;
+		font-size: 1.5em;
+	}	
+	.artist {
+		font-weight: bold;
+		color: #666;
+	}
+}
 
+.has-cover {
+	img {
+		width: 100%;
+	}	
 }
 
 #footer {
-	background: #ccc;
+	padding: 100px 0;
+	background: #ddd;
+	color: #222;
+	p.what-the-shit {
+		font-weight: bold;
+		font-size: 1.4em;
+	}
+	p.what-the-shit-is {
+		span.name {
+			font-weight: bold;
+		}
+		span.hef {
+			color: #444;
+		}
+		span.cb {
+			color: #888;
+		}
+		span.callout {
+		}
+	}
+}
+
+p.commentary {
+	color: #888;
+	.who {
+		font-weight: bold;
+	}
+	.quote {
+		font-style: italic;
+	}
+}
+
+.record {
+	font-style: italic;
+}
+.year {
+	color: #aaa;
+}
+
+h2 {
+	border-bottom: solid 1px #ddd;
+	margin-bottom: 20px;
 }

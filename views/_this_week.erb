@@ -1,8 +1,15 @@
-<div id="this_week">
+<div id="this_week" class="has-cover">
 	<div class="container">
+
 		<div class="row">
-			<%= partial :this_week_guy, locals: {guy: @hef_data} %>
-			<%= partial :this_week_guy, locals: {guy: @cb_data} %>
+			<div class="col-xs-12">
+				<h2>This Week</h2>
+			</div>
+		</div>
+
+		<div class="row">
+			<%= partial :this_week_info, locals: {record_data: @hef_data, who: 'Hef'} %>
+			<%= partial :this_week_info, locals: {record_data: @cb_data, who: 'CB'} %>
 		</div>
 	</div>
 </div>

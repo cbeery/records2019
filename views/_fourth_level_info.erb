@@ -1,0 +1,6 @@
+<div class="col-sm-6">
+	<h5><%= who %></h5>
+	<table class="table table-condensed">
+		<%= partial :fourth_level_item, collection: record_data[@fourth_level_indices], locals: {who: who} %>
+	</table>
+</div>
