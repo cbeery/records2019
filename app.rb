@@ -26,8 +26,8 @@ get '/' do
 	hef_latest_week_of_data = @hef_data[0][0]
 	@latest_week_of_data = [cb_latest_week_of_data, hef_latest_week_of_data].min.to_i
 	@current_week = Date.today.cweek # Week starts on Monday
-	# @current_week = Date.today.cweek + (Date.today.sunday? ? 1 : 0)
-	@current_week = 6
+	@current_week = Date.today.cweek + (Date.today.sunday? ? 1 : 0)
+	# @current_week = 6
 
 	# Define this_week_index for first row of data to use (normally This/Current Week)
 	# this_week_index is latest week of data - current week, unless that's less than -1
