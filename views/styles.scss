@@ -101,6 +101,16 @@ body {
 		span.callout {
 		}
 	}
+	#subfooter {
+		color: #bbb;
+		margin: 50px 0 0 0;
+			font-size: 1.3em;
+		p.cant-score {
+		}
+		p.no-more {
+			font-style: italic;
+		}
+	}
 }
 
 p.commentary {
@@ -110,6 +120,14 @@ p.commentary {
 	}
 	.quote {
 		font-style: italic;
+	}
+}
+
+p.rate {
+	color: #bbb;
+	strong {
+		color: #888;
+		font-size: 2.2em;
 	}
 }
 
