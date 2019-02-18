@@ -9,6 +9,7 @@
 
 		<div class="row">
 			<%= partial :this_week_info, locals: {record_data: @hef_data, who: 'Hef'} %>
+			<div class="visible-xs"><hr/></div>
 			<%= partial :this_week_info, locals: {record_data: @cb_data, who: 'CB'} %>
 		</div>
 	</div>
