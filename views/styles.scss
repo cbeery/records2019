@@ -1,5 +1,10 @@
 $start-here-color:				#5d6b85;
 $header-color:						$start-here-color;
+$why-color:								lighten($start-here-color, 45%);
+$why-text-color:					lighten($start-here-color, 30%);
+$why-hef-text-color:			darken($start-here-color, 8%);
+$why-cb-text-color:				lighten($start-here-color, 15%);
+$why-callout-text-color:	darken($start-here-color, 58%);
 $this-week-color:					lighten($start-here-color, 25%);
 $ass: #804b4c;
 
@@ -20,6 +25,31 @@ body {
 	padding: 30px 0 60px 0;
 	p.listening {
 		min-height: 3em;
+	}
+}
+
+#why {
+	background: $why-color;
+	color: $why-text-color;
+	padding: 30px 0;
+	@media (max-width: 768px) {
+		font-size: .85em;
+	}
+	p {
+		span.why { font-weight: bold; font-style: italic;}
+		span.name {
+			font-weight: bold;
+		}
+		span.hef {
+			color: $why-hef-text-color;
+		}
+		span.cb {
+			color: $why-cb-text-color;
+		}
+		span.callout {
+			font-weight: bold;
+			font-style: italic;
+		}
 	}
 }
 
@@ -81,7 +111,7 @@ body {
 }
 
 #footer {
-	padding: 130px 0;
+	padding: 60px 0;
 	background: #ddd;
 	color: #222;
 	p.what-the-shit {
@@ -102,8 +132,8 @@ body {
 		}
 	}
 	#subfooter {
-		color: #bbb;
-		margin: 50px 0 0 0;
+		color: #999;
+		margin: 30px 0 0 0;
 			font-size: 1.3em;
 		p.cant-score {
 		}
