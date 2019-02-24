@@ -1,10 +1,9 @@
 <%= partial :header %>
 <%= partial :why %>
-<p><%= @color %></p>
+
 <%= partial :this_week if @show_this_week %>
 <%= partial :last_week %>
 <%= partial :third_level %>
 <%= partial :fourth_level unless @cb_data[@fourth_level_indices].nil? || @cb_data[@fourth_level_indices].empty? %>
-
 
 <%= partial :footer %>

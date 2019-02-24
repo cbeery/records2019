@@ -1,13 +1,13 @@
 // $start-here-color:				#36313e;
 $start-here-color:				<%= @color %>;
 $header-color:						$start-here-color;
-$why-color:								lighten($start-here-color, 45%);
+$header-text-color:				lighten($start-here-color, 40%);
+$why-color:								lighten($start-here-color, 55%);
 $why-text-color:					lighten($start-here-color, 30%);
 $why-hef-text-color:			darken($start-here-color, 8%);
 $why-cb-text-color:				lighten($start-here-color, 15%);
 $why-callout-text-color:	darken($start-here-color, 58%);
 $this-week-color:					lighten($start-here-color, 25%);
-$ass: #804b4c;
 
 body {
 	background: #fff;
@@ -20,13 +20,6 @@ body {
 		font-weight: bold;
 		font-size: 2em;
 	}	
-}
-
-#this_week {
-	padding: 30px 0 60px 0;
-	p.listening {
-		min-height: 3em;
-	}
 }
 
 #why {
@@ -53,6 +46,56 @@ body {
 		}
 	}
 }
+
+#footer {
+	padding: 60px 0;
+	background: #ddd;
+	color: #222;
+	#subfooter {
+		color: #999;
+		margin: 30px 0 0 0;
+			font-size: 1.3em;
+		p.cant-score {
+		}
+		p.no-more {
+			font-style: italic;
+		}
+	}
+}
+
+footer {
+	margin: 30px 0 0 0;
+	#hef_no_score {
+		padding: 110px 0;
+		background: $why-color;
+		color: $why-text-color;
+		font-size: 1.5em;
+		p.cant-score {
+			font-weight: bold;
+		}
+		p.no-more {
+			font-style: italic;
+		}
+	}
+	#links_and_credits {
+		padding: 30px 0;
+		text-align: center;
+		background: $header-color;
+		color: $header-text-color;
+		a {
+			color: white;
+		}
+	}
+
+}
+
+#this_week {
+	padding: 30px 0 60px 0;
+	p.listening {
+		min-height: 3em;
+	}
+}
+
 
 #last_week {
 	background: #efefef;
@@ -111,38 +154,6 @@ body {
 	}	
 }
 
-#footer {
-	padding: 60px 0;
-	background: #ddd;
-	color: #222;
-	p.what-the-shit {
-		font-weight: bold;
-		font-size: 1.4em;
-	}
-	p.what-the-shit-is {
-		span.name {
-			font-weight: bold;
-		}
-		span.hef {
-			color: #444;
-		}
-		span.cb {
-			color: #888;
-		}
-		span.callout {
-		}
-	}
-	#subfooter {
-		color: #999;
-		margin: 30px 0 0 0;
-			font-size: 1.3em;
-		p.cant-score {
-		}
-		p.no-more {
-			font-style: italic;
-		}
-	}
-}
 
 p.commentary {
 	color: #888;
@@ -173,3 +184,4 @@ h2 {
 	border-bottom: solid 1px #ddd;
 	margin-bottom: 20px;
 }
+
