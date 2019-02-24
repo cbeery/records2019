@@ -11,7 +11,12 @@ set :partial_template_engine, :erb
 enable :partial_underscores
 
 # Sass style sheet
-get('/styles.css'){ scss :styles, locals: {hate: 'black'} }
+get('/styles.css') do
+	# This was a good hint https://groups.google.com/forum/#!msg/sinatrarb/pLOyBFqbCi0/LbVDYlfphnAJ
+	drive_setup
+	@color = @drive.get_spreadsheet_values(ENV['SHEET_ID'], 'CSS!A1:A1').values[0][0]
+  scss(erb :styles, layout: false)
+end
 
 get '/' do
 	drive_setup
