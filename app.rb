@@ -11,7 +11,7 @@ set :partial_template_engine, :erb
 enable :partial_underscores
 
 # Sass style sheet
-get('/styles.css'){ scss :styles }
+get('/styles.css'){ scss :styles, locals: {hate: 'black'} }
 
 get '/' do
 	drive_setup
@@ -22,9 +22,9 @@ get '/' do
 	@cb_data = cb_rows.drop(1).select{|row| !row[10].nil?}.reverse
 	@hef_data = hef_rows.drop(1).select{|row| !row[10].nil?}.reverse
 
-	cb_latest_week_of_data = @cb_data[0][0] # first row (reversed), first column
-	hef_latest_week_of_data = @hef_data[0][0]
-	@latest_week_of_data = [cb_latest_week_of_data, hef_latest_week_of_data].min.to_i
+	@cb_latest_week_of_data = @cb_data[0][0] # first row (reversed), first column
+	@hef_latest_week_of_data = @hef_data[0][0]
+	@latest_week_of_data = [@cb_latest_week_of_data, @hef_latest_week_of_data].min.to_i
 	# @current_week = Date.today.cweek # Week starts on Monday
 	@current_week = Date.today.cweek + (Date.today.sunday? ? 1 : 0)
 	# @current_week = 7	
