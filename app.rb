@@ -49,6 +49,25 @@ get '/' do
 	erb :index
 end
 
+get '/api/latest' do
+	drive_setup
+	cb_rows = @drive.get_spreadsheet_values(ENV['SHEET_ID'], 'CB should listen to').values
+	hef_rows = @drive.get_spreadsheet_values(ENV['SHEET_ID'], 'Hef should listen to').values
+
+	@cb_data = cb_rows.drop(1).select{|row| !row[10].nil?}
+	@hef_data = hef_rows.drop(1).select{|row| !row[10].nil?}
+
+	latest_row = [@cb_data.size, @hef_data.size].min
+	latest_index = latest_row - 1
+
+	cb_latest, hef_latest = @cb_data[latest_index], @hef_data[latest_index]
+
+	content_type 'application/json'
+	# {size: @cb_data.size, latest_week: @cb_data.last[0]}.to_json
+	{week: latest_row, hef: {artist: hef_latest[3], record: hef_latest[4], year: hef_latest[5], cover_img_url: hef_latest[10]}, cb: {artist: cb_latest[3], record: cb_latest[4], year: cb_latest[5], cover_img_url: cb_latest[10]}}.to_json
+
+end
+
 helpers do
 
 	def spotify_link_album_cover(record_data_row)
