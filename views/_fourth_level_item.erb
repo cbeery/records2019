@@ -4,8 +4,13 @@
 			<span class="record"><%= spotify_link fourth_level_item %></span>
 			<span class="year"><%= fourth_level_item[5] %></span>
 	</td>
+	<% if who == 'CB' %>
+		<td class="rating">
+			<%= "<em>#{fourth_level_item[7]}</em>/10" %>
+		</td>
+	<% end %>
 	<td>
-		<a tabindex="0" role="button" data-toggle="popover" data-trigger="focus" title="<%= who %> sez" data-placement="left" data-content="<%= fourth_level_item[6] %><%= " #{fourth_level_item[7]}/10" if who == 'CB' and !fourth_level_item[7].empty? %>">
+		<a tabindex="0" role="button" data-toggle="popover" data-trigger="focus" title="<%= who %> sez" data-placement="left" data-content="<%= fourth_level_item[6] %>">
 			<span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
 		</a>
 		
