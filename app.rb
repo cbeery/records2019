@@ -71,7 +71,9 @@ end
 helpers do
 
 	def spotify_link_album_cover(record_data_row)
-		%Q{<a href="#{record_data_row[9]}" title="#{record_data_row[4]}"><img src="#{record_data_row[10]}" class="img img-responsive img-thumbnail"/></a>}
+		img = %Q{<img src="#{record_data_row[10]}" class="img img-responsive img-thumbnail"/>}
+		# Spotify link around the cover, or just the cover if no Spotify link
+		record_data_row[9].empty? ? img : %Q{<a href="#{record_data_row[9]}" title="#{record_data_row[4]}">#{img}</a>}
 	end
 
 	def spotify_link(record_data_row)
