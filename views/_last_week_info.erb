@@ -10,12 +10,12 @@
 			<%= spotify_link_album_cover(record_data[@last_week_index]) %>
 		</div>
 		<div class="col-sm-5 col-xs-12">
-			<% unless record_data[@last_week_index][6].nil? %>
+			<% unless record_data[@last_week_index][6].empty? %>
 				<p class="commentary"><span class="who"><%= who %> sez </span> <span class="quote">"<%= record_data[@last_week_index][6] %>"</span></p>
-				<% if who == 'CB' and !record_data[@last_week_index][7].empty? %>
-					<p class="rate"><strong><%= record_data[@last_week_index][7] %></strong> / 10</p>
-				<% end %>
 			<% end %>	
+			<% if who == 'CB' and !record_data[@last_week_index][7].empty? %>
+				<p class="rate"><strong><%= record_data[@last_week_index][7] %></strong> / 10</p>
+			<% end %>
 		</div>
 	</div>
 </div>
