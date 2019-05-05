@@ -13,7 +13,7 @@
 			<% unless record_data[@last_week_index][6].empty? %>
 				<p class="commentary"><span class="who"><%= who %> sez </span> <span class="quote">"<%= record_data[@last_week_index][6] %>"</span></p>
 			<% end %>	
-			<% if who == 'CB' and !record_data[@last_week_index][7].empty? %>
+			<% unless record_data[@last_week_index][7].empty? %>
 				<p class="rate"><strong><%= record_data[@last_week_index][7] %></strong> / 10</p>
 			<% end %>
 		</div>

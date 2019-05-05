@@ -17,7 +17,7 @@
 			<% unless third_level_item[6].empty? %>
 				<p class="commentary"><span class="who"><%= who %> sez </span> <span class="quote">"<%= third_level_item[6] %>"</span></p>
 			<% end %>	
-			<% if who == 'CB' and !third_level_item[7].empty? %>
+			<% unless third_level_item[7].empty? %>
 				<p class="rate"><strong><%= third_level_item[7] %></strong> / 10</p>
 			<% end %>
 
