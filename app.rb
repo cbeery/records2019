@@ -64,7 +64,7 @@ get '/api/latest' do
 
 	content_type 'application/json'
 	# {size: @cb_data.size, latest_week: @cb_data.last[0]}.to_json
-	{week: latest_row, hef: {artist: hef_latest[3], record: hef_latest[4], year: hef_latest[5], cover_img_url: hef_latest[10]}, cb: {artist: cb_latest[3], record: cb_latest[4], year: cb_latest[5], cover_img_url: cb_latest[10]}}.to_json
+	{week: latest_row, hef: {artist: hef_latest[3], record: hef_latest[4], year: hef_latest[5], cover_img_url: hef_latest[10], spotify_url: hef_latest[9]}, cb: {artist: cb_latest[3], record: cb_latest[4], year: cb_latest[5], cover_img_url: cb_latest[10], spotify_url: cb_latest[9]}}.to_json
 
 end
 
