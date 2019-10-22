@@ -20,12 +20,10 @@ end
 
 get '/' do
 	drive_setup
-	cb_rows = @drive.get_spreadsheet_values(ENV['SHEET_ID'], 'CB should listen to').values
-	hef_rows = @drive.get_spreadsheet_values(ENV['SHEET_ID'], 'Hef should listen to').values
+	grab_the_data
 
-	# Drop header row, select album cover (column 10) not nil, reverse sort
-	@cb_data = cb_rows.drop(1).select{|row| !row[10].nil?}.reverse
-	@hef_data = hef_rows.drop(1).select{|row| !row[10].nil?}.reverse
+	@cb_data = @cb_completed_rows.reverse
+	@hef_data = @hef_completed_rows.reverse
 
 	@cb_latest_week_of_data = @cb_data[0][0] # first row (reversed), first column
 	@hef_latest_week_of_data = @hef_data[0][0]
@@ -51,19 +49,14 @@ end
 
 get '/api/latest' do
 	drive_setup
-	cb_rows = @drive.get_spreadsheet_values(ENV['SHEET_ID'], 'CB should listen to').values
-	hef_rows = @drive.get_spreadsheet_values(ENV['SHEET_ID'], 'Hef should listen to').values
-
-	@cb_data = cb_rows.drop(1).select{|row| !row[10].nil?}
-	@hef_data = hef_rows.drop(1).select{|row| !row[10].nil?}
-
-	latest_row = [@cb_data.size, @hef_data.size].min
+	grab_the_data
+	
+	latest_row = [@cb_completed_rows.size, @hef_completed_rows.size].min
 	latest_index = latest_row - 1
 
-	cb_latest, hef_latest = @cb_data[latest_index], @hef_data[latest_index]
+	cb_latest, hef_latest = @cb_completed_rows[latest_index], @hef_completed_rows[latest_index]
 
 	content_type 'application/json'
-	# {size: @cb_data.size, latest_week: @cb_data.last[0]}.to_json
 	{week: latest_row, hef: {artist: hef_latest[3], record: hef_latest[4], year: hef_latest[5], cover_img_url: hef_latest[10], spotify_url: hef_latest[9]}, cb: {artist: cb_latest[3], record: cb_latest[4], year: cb_latest[5], cover_img_url: cb_latest[10], spotify_url: cb_latest[9]}}.to_json
 
 end
@@ -94,4 +87,20 @@ def drive_setup
 	auth.fetch_access_token!
 	@drive = Google::Apis::SheetsV4::SheetsService.new
 	@drive.authorization = auth
+end
+
+def get_all_the_rows
+	@cb_all_rows = @drive.get_spreadsheet_values(ENV['SHEET_ID'], 'CB should listen to').values
+	@hef_all_rows = @drive.get_spreadsheet_values(ENV['SHEET_ID'], 'Hef should listen to').values
+end
+
+def get_all_the_completed_rows
+	# Drop header row, select album cover (column 10) not nil
+	@cb_completed_rows = @cb_all_rows.drop(1).select{|row| !row[10].nil?}
+	@hef_completed_rows = @hef_all_rows.drop(1).select{|row| !row[10].nil?}
+end
+
+def grab_the_data
+	get_all_the_rows
+	get_all_the_completed_rows
 end
