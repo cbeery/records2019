@@ -18,6 +18,8 @@ get('/styles.css') do
   scss(erb :styles, layout: false)
 end
 
+# web
+
 get '/' do
 	drive_setup
 	grab_the_data
@@ -46,6 +48,22 @@ get '/' do
 
 	erb :index
 end
+
+get '/summary' do
+	# notes
+	# ui to reverse the direction
+	# ui to ...
+	drive_setup
+	grab_the_data
+
+	@cb_data = @cb_completed_rows
+	@hef_data = @hef_completed_rows
+
+	erb :summary
+end
+
+
+# api
 
 get '/api/latest' do
 	drive_setup
