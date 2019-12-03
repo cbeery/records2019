@@ -1,0 +1,38 @@
+<section>
+	<div class="row">
+		<div class="col-xs-12">
+			<h3><%= head %> week<%= 's' if weeks.size > 1 %></h3>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xs-12 col-sm-6">
+			<h4>Combined Hef, CB rating</h4>
+			<p class="number"><%= total %></p>
+		</div>
+
+		<div class="col-xs-12 col-sm-6">
+
+			<% weeks.each do |week| %>
+
+				<div class="col-xs-12 two-albums">
+
+					<h4>Week <%= week[0] %></h4>
+					<p class="notes">Hef gives <%= artist_album(@hef_data[week[0].to_i-1]) %> a <strong><%= week[11] %></strong> and CB gives <%= artist_album(@cb_data[week[0].to_i-1]) %> a <strong><%= week[19] %></strong>.</p>
+					<div class="row">
+						<div class="col-xs-10 col-xs-offset-1 col-sm-5 col-sm-offset-0">
+						<%= spotify_link_album_cover(@hef_data[week[0].to_i-1]) %>
+						</div>
+						<div class="col-xs-10 col-xs-offset-1 col-sm-5 col-sm-offset-2">
+						<%= spotify_link_album_cover(@cb_data[week[0].to_i-1]) %>
+						</div>
+					</div>
+
+				</div>
+
+			<% end %>
+
+		</div>
+	</div>
+
+</section>

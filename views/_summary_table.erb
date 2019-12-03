@@ -1,0 +1,19 @@
+<div role="tabpanel" class="tab-pane fade<%= ' active in' if who == 'Hef' %>" id="summary_<%= who %>">
+	<table class="table year-end-summary-table">
+		<thead>
+			<tr>
+				<th class="lighter">Week</th>
+				<th>Record</th>
+				<th><%= who %> rates it</th>
+				<% if who=='Hef' %>
+					<th class="lighter">but CB rates it</th>
+				<% end %>
+
+			</tr>
+		</thead>
+
+		<tbody>
+			<%= partial :summary_row, collection: data, locals: {who: who} %>
+		</tbody>
+	</table>
+</div>

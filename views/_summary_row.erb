@@ -1,0 +1,26 @@
+<tr>
+	<td class="week lighter"><%= summary_row[0] %></td>
+	<td class="record">
+		<%= summary_row[3] %>
+		<em><a href="<%= summary_row[9] %>" title="Spotify: <%= summary_row[4] %>"><%= summary_row[4] %></a></em>
+		<span class="year"><%= summary_row[5] %></span>
+	</td>
+	<td class="rate">
+		<% unless summary_row[7].empty? %>
+			<strong><%= summary_row[7] %></strong><span class="slash-ten super-light">/10</span>
+		<% end %>
+	</td>
+	<% if who=='Hef' %>
+		<td class="lighter rate">
+			<strong><%= summary_row[8] %></strong><span class="slash-ten super-light">/10</span>
+		</td>
+	<% end %>
+</tr>
+<tr class="commentary">
+	<% unless summary_row[6].empty? %>
+		<td></td>
+		<td colspan="3">
+			<strong><%= who %> sez</strong> "<%= summary_row[6] %>"
+		</td>
+	<% end %>
+</tr>

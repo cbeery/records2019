@@ -1,0 +1,61 @@
+<div class="report">
+
+	<%= partial :summary_header %>
+
+	<div class="container" id="numbers">
+
+		<section>
+			<div class="row">
+				<div class="col-xs-12">
+					<h3>Average rating for inflicted suffering</h3>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-xs-12 col-sm-6">
+					<h4>Hef average rating</h4>
+					<p class="number"><%= @hef_avg %></p>
+					<p class="notes">Hef rated <%= @hef_ratings.size %> records, with a high of <strong><%= @hef_max.to_i %></strong> (<%= @hef_max_records %>) and a low of <strong><%= @hef_min.to_i %></strong> (<%= @hef_min_records %>).</p>
+				</div>
+				<div class="col-xs-12 col-sm-6">
+					<h4>CB average rating</h4>
+					<p class="number"><%= @cb_avg %></p>
+					<p class="notes">CB rated <%= @cb_ratings.size %> records, with a high of <strong><%= @cb_max.to_i %></strong> (<%= @cb_max_records %>) and a low of <strong><%= @cb_min.to_i %></strong> (<%= @cb_min_records %>).</p>
+				</div>
+			</div>
+		</section>
+
+		<section>
+			<div class="row">
+				<div class="col-xs-12">
+					<h3>CB rates what he assigned to Hef</h3>
+					<h4>CB average for records he made Hef listen to</h4>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-xs-12 col-sm-6">
+					<p class="number"><%= @cb_to_hef_avg %></p>
+				</div>
+				<div class="col-xs-12 col-sm-6">
+					<p class="notes">CB assigned Hef several <strong>10</strong>s (<%= @cb_to_hef_max_records %>) and one <strong>5</strong> (<%= @cb_to_hef_min_records %>).</p>
+				</div>
+			</div>
+		</section>
+
+		<%= partial :best_or_worst, locals: {weeks: @best_weeks, total: @best_week_total, head: 'Best'} %>
+		<%= partial :best_or_worst, locals: {weeks: @worst_weeks, total: @worst_week_total, head: 'Worst'} %>
+
+		<section>
+			<div class="row">
+				<div class="col-xs-12">
+					<h3>Largest discrepancy</h3>
+				</div>
+			</div>
+		</section>
+
+	</div> <!-- .container -->
+
+	<%= partial :summary_footer %>
+
+</div> <!-- #report -->

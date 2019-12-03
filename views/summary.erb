@@ -1,1 +1,29 @@
-<%= partial :footer %>
+<div class="report">
+
+	<%= partial :summary_header %>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+
+				<div class="toggle pull-right">
+					<span class="glyphicon glyphicon-comment" aria-hidden="true"></span> <span class="hidden-xs">Commentary:</span> <span class="commentary-toggle"><strong>Off</strong> | <a href="#" class="toggler" data-toggle-target="commentary,commentary-toggle">On</a></span><span class="commentary-toggle off"><a href="#" class="toggler" data-toggle-target="commentary,commentary-toggle">Off</a> | <strong>On</strong></span>
+				</div>
+
+				<ul class="nav nav-tabs" role="tablist">
+					<li role="presentation" class="active"><a href="#summary_Hef" aria-controls="summary_Hef" role="tab" data-toggle="tab"><span class="hidden-xs">CB made </span><strong>Hef</strong><span class="hidden-xs"> listen to this crap...</span></a></li>
+					<li role="presentation"><a href="#summary_CB" aria-controls="summary_CB" role="tab" data-toggle="tab"><span class="hidden-xs">Hef made </span><strong>CB</strong><span class="hidden-xs"> listen to this crap...</span></a></li>
+				</ul>
+
+				<div class="tab-content">
+					<%= partial :summary_table, locals: {data: @hef_data.reverse, who: 'Hef'} %>
+					<%= partial :summary_table, locals: {data: @cb_data.reverse, who: 'CB'} %>
+				</div>
+
+			</div>
+		</div>
+	</div> <!-- .container -->
+
+	<%= partial :summary_footer %>
+
+</div> <!-- #report -->

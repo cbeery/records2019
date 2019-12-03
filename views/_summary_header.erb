@@ -1,0 +1,37 @@
+<header>
+	<div class="container">
+		<h1>
+			<a id="whatTheHellLink" href="#whatTheHell" data-toggle="collapse" class="pull-right">
+				Wha<span class="hidden-xs">t</span><span class="hidden-xs hidden-sm"> the</span><span class="hidden-xs hidden-sm hidden-md"> holy</span><span class="hidden-xs hidden-sm"> hell</span><span class="hidden-xs"> was this</span>?
+				<span class="caret"></span>
+			</a>
+			<a href="/">Records. 2019.</a>
+		</h1>
+		<h2>
+			<%= @subhead %>
+		</h2>
+	</div>
+</header>
+
+<div class="collapse" id="whatTheHell">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<h3>How'd/Why'd this happen?</h3>
+				<p>Text messages, circa December 2018...</p>
+
+				<div id="why">
+					<%= partial :why_text_messages %>
+				</div>
+
+				<h3>What else?</h3>
+				<p>There was a <a href="/original" target="_blank">different layout here</a> when things were in progress. We kept the <a href="https://docs.google.com/spreadsheets/d/1Y6iKdlutLGXz_0Wb1OktoGezUcD9Xw-s_Sy0NR0YPHk/edit?usp=sharing" target="_blank">data in a Google Sheet</a>, kept the <a href="https://github.com/cbeery/records2019" target="_blank">code on GitHub</a> and hosted the site on <a href="https://www.heroku.com" target="_blank">Heroku</a>.</p>
+				<p>We <a href="/numbers">crunched some numbers</a>.</p>
+
+				<h3>Who cares?</h3>
+				<p>No one.</p>
+
+			</div>
+		</div>
+	</div>
+</div>
