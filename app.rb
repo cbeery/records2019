@@ -47,6 +47,7 @@ end
 get '/numbers' do
 	get_data_for_summary_layout
 	@subhead = 'Numbers.'
+	@sub_small_link = '/summary'
 
 	@hef_ratings = @hef_data.map{|h| h[11].to_f}.select{|h| !h.zero?}
 	@hef_avg = (@hef_ratings.sum / @hef_ratings.count).round(1)
@@ -78,7 +79,12 @@ get '/numbers' do
 	@worst_weeks = @combined_rated_data.select{|c| c[11].to_f + c[19].to_f == @worst_week_total}
 	@best_weeks = @combined_rated_data.select{|c| c[11].to_f + c[19].to_f == @best_week_total}
 
+	@max_diff_single = @combined_rated_data.max{|a,b| (a[8].to_f - a[11].to_f) <=> (b[8].to_f - b[11].to_f)}
+	@max_diff = @max_diff_single[8].to_f - @max_diff_single[11].to_f
+	@max_diff_weeks = @combined_rated_data.select{|c| c[8].to_f - c[11].to_f == @max_diff}
 	
+	@cb_heard_it = @cb_data.select{|cb| cb[11] == 'yes'}
+	@cb_hadnt_heard_it = @cb_data.select{|cb| cb[11] == 'no'}
 	erb :numbers
 end
 
@@ -148,7 +154,8 @@ end
 def get_data_for_summary_layout
 	@styles = 'report'
 	@title ='Records. 2019.'
-	@subhead = 'Year-end summary report.'
+	@subhead = 'Summary.'
+	@sub_small_link = '/numbers'
 	@commentary = (params[:commentary] == 'on')
 
 	drive_setup
