@@ -25,7 +25,8 @@ end
 # web
 
 get '/' do
-	if Date.today.year > 2019
+	# if Date.today.year > 2019
+	if Date.today.to_s > "2019-12-28"
 		get_data_for_summary_layout
 		erb :summary
 	else
