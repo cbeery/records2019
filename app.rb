@@ -45,6 +45,12 @@ get '/summary' do
 	erb :summary
 end
 
+get '/artists' do
+	get_data_for_summary_layout
+	@artists = (@hef_data.map{|h| h[3]} + @cb_data.map{|c| c[3]}).sort
+	erb :artists
+end
+
 get '/numbers' do
 	get_data_for_summary_layout
 	@subhead = 'Numbers.'
