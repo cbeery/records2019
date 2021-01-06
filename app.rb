@@ -141,9 +141,12 @@ def get_data_for_original_layout
 	@cb_latest_week_of_data = @cb_data[0][0] # first row (reversed), first column
 	@hef_latest_week_of_data = @hef_data[0][0]
 	@latest_week_of_data = [@cb_latest_week_of_data, @hef_latest_week_of_data].min.to_i
+	
 	# @current_week = Date.today.cweek # Week starts on Monday
-	@current_week = Date.today.cweek + (Date.today.sunday? ? 1 : 0)
-	# @current_week = 7	
+	# @current_week = Date.today.cweek + (Date.today.sunday? ? 1 : 0)
+	
+	# End-of-life: permanently set week to 53
+	@current_week = 53
 
 	# Define this_week_index for first row of data to use (normally This/Current Week)
 	# this_week_index is latest week of data - current week, unless that's less than -1
