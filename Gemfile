@@ -5,7 +5,7 @@ source "https://rubygems.org"
 ruby '3.1.1'
 
 gem 'bundler'
-gem 'sinatra', '~> 2.2'
+gem 'sinatra', '~> 3.0'
 gem 'sinatra-contrib'
 gem 'sinatra-partial'
 gem 'google-api-client'
