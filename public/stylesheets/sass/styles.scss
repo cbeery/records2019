@@ -1,5 +1,5 @@
-// $start-here-color:				#36313e;
-$start-here-color:				<%= @color %>;
+$start-here-color:				#36313e;
+// $start-here-color:				<%= @color %>;
 $header-color:						$start-here-color;
 $header-text-color:				lighten($start-here-color, 40%);
 $why-color:								lighten($start-here-color, 55%);
