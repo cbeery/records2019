@@ -1,0 +1,177 @@
+$background:								#efefef;
+$dark-background:						#444;
+$text-color:								#666;
+$tab-text-color: 						#999;
+$tab-text-strong-color: 		#333;
+$tab-background: 						#dfdfdf;
+$light-text-color:					#999;
+$lighter-text-color:				#aaa;
+$super-light-text-color:		#ccc;
+$alt-text-color:						#ac6f70;
+$why-hef-text-color:				#e5e4c5;
+$why-cb-text-color:					#c5d0e6;
+
+.report {
+
+	@media only screen and (min-width : 768px){
+		font-size: 1.2em;
+	}
+
+	background: $background;
+	color: $text-color;
+	a {
+		color: black;
+	}
+	#whatTheHell,
+	footer {
+		background: $dark-background;
+		color: $super-light-text-color;
+		a {
+			color: white;
+		}
+	}
+	#whatTheHell .col-xs-12 {
+		// margin: 1em 0;
+		padding-top: 1em;
+		padding-bottom: 3em;
+		h3 {
+			margin-top: 2em;
+		}
+		#why {
+			padding-left: 1em;
+			padding-right: 1em;
+			font-size: .9em;
+			span.name {
+				font-weight: bold;
+			}
+			span.hef {
+				color: $why-hef-text-color;
+			}
+			span.cb {
+				color: $why-cb-text-color;
+			}
+			span.callout {
+				font-weight: bold;
+				font-style: italic;
+			}
+		}
+	}
+	h1 {
+		margin: 1.6em 0 .2em 0;
+		font-weight: bold;
+		font-size: 2.3em;
+		a {
+			color: $text-color;
+		}
+		a#whatTheHellLink {
+			font-weight: normal;
+			font-size: .6em;
+			color: black;
+		}
+		p.little {
+			font-size: .4em;
+			font-weight: normal;
+			font-style: italic;
+			a {
+				color: black;
+			}
+		}
+	}
+	h2 {
+		border-bottom: none;
+		font-size: 1.2em;
+		margin-top: 0;
+	}
+	.toggle {
+		margin-top: 2em;
+		font-style: italic;
+		font-size: .9em;
+	}
+	ul.nav {
+		margin-top: 1em;
+		li {
+			font-size: .9em;
+			/*font-weight: bold;*/
+		}
+		a:hover {
+			background: $tab-background;
+		}
+		li.active {
+			border-bottom: solid 1px $background;
+			a {
+				background: none;
+				color: $tab-text-color;
+				strong {
+					color: $tab-text-strong-color;
+				}
+			}
+		}
+	}
+	.off {
+		display: none;	
+	}
+	table {
+		font-size: .9em;
+		span.year,
+		span.slash-ten {
+			font-size: .9em;
+		}
+		.lighter {
+			color: $light-text-color;
+		}
+		.super-light {
+			color: $lighter-text-color;
+		}
+		.week {
+			width: 5%;
+		}
+		.record {
+			width: 66%;
+		}
+		.rate {
+		}
+		tr.commentary {
+			display: none;
+			font-style: italic;
+			font-size: .9em;
+			color: $alt-text-color;
+		}
+		tr.commentary td {
+			border-top: none;
+			padding-top: 1.5em;
+			padding-bottom: 2.5em;
+		}
+	}
+	footer {
+		margin-top: 3em;
+		padding: 5em 0;
+	}
+
+	#numbers {
+		section {
+			margin-top: 3.5em;
+			margin-bottom: 10em;
+		}
+		h3 {
+			font-size: 1.4em;
+		}
+		p.number {
+			font-size: 10em;
+			line-height: 1em;
+			font-style: bold;
+		}
+		p.notes {
+		font-size: .9em;
+		}
+		.album-covers {
+			margin-bottom: 2em;
+			.album-cover {
+				margin-bottom: 2em;
+			}
+		}
+	}
+}
+
+ul#artists {
+	margin: 3em 0;
+}

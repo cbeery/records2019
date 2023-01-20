@@ -1,0 +1,54 @@
+/*
+Error: Invalid CSS after "...here-color:				": expected expression (e.g. 1px, bold), was "<%= @color %>;"
+        on line 2 of ./public/stylesheets/sass/styles.scss
+
+1: // $start-here-color:				#36313e;
+2: $start-here-color:				<%= @color %>;
+3: $header-color:						$start-here-color;
+4: $header-text-color:				lighten($start-here-color, 40%);
+5: $why-color:								lighten($start-here-color, 55%);
+6: $why-text-color:					lighten($start-here-color, 30%);
+7: $why-hef-text-color:			darken($start-here-color, 8%);
+
+Backtrace:
+./public/stylesheets/sass/styles.scss:2
+/Users/curt/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:1308:in `expected'
+/Users/curt/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/script/lexer.rb:240:in `expected!'
+/Users/curt/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/script/parser.rb:855:in `assert_expr'
+/Users/curt/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/script/parser.rb:68:in `parse'
+/Users/curt/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:1164:in `sass_script'
+/Users/curt/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:653:in `variable'
+/Users/curt/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:707:in `block_child'
+/Users/curt/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:697:in `block_contents'
+/Users/curt/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:137:in `stylesheet'
+/Users/curt/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:41:in `parse'
+/Users/curt/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/engine.rb:414:in `_to_tree'
+/Users/curt/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/engine.rb:389:in `_render_with_sourcemap'
+/Users/curt/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/engine.rb:307:in `render_with_sourcemap'
+/Users/curt/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/plugin/compiler.rb:462:in `update_stylesheet'
+/Users/curt/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/Users/curt/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/plugin/compiler.rb:209:in `each'
+/Users/curt/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/Users/curt/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/plugin.rb:82:in `update_stylesheets'
+/Users/curt/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/plugin.rb:54:in `check_for_updates'
+/Users/curt/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/plugin/rack.rb:51:in `call'
+/Users/curt/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/rack-ssl-enforcer-0.2.9/lib/rack/ssl-enforcer.rb:57:in `call'
+/Users/curt/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/rack-2.2.6.2/lib/rack/tempfile_reaper.rb:15:in `call'
+/Users/curt/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/rack-2.2.6.2/lib/rack/lint.rb:50:in `_call'
+/Users/curt/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/rack-2.2.6.2/lib/rack/lint.rb:38:in `call'
+/Users/curt/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/rack-2.2.6.2/lib/rack/show_exceptions.rb:23:in `call'
+/Users/curt/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/rack-2.2.6.2/lib/rack/common_logger.rb:38:in `call'
+/Users/curt/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/sinatra-3.0.5/lib/sinatra/base.rb:261:in `call'
+/Users/curt/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/rack-2.2.6.2/lib/rack/content_length.rb:17:in `call'
+/Users/curt/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/puma-6.0.2/lib/puma/configuration.rb:268:in `call'
+/Users/curt/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/puma-6.0.2/lib/puma/request.rb:93:in `block in handle_request'
+/Users/curt/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/puma-6.0.2/lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+/Users/curt/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/puma-6.0.2/lib/puma/request.rb:92:in `handle_request'
+/Users/curt/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/puma-6.0.2/lib/puma/server.rb:429:in `process_client'
+/Users/curt/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/puma-6.0.2/lib/puma/server.rb:232:in `block in run'
+/Users/curt/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/puma-6.0.2/lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid CSS after \"...here-color:				\": expected expression (e.g. 1px, bold), was \"<%= @color %>;\"\A         on line 2 of ./public/stylesheets/sass/styles.scss\A \A 1: // $start-here-color:				#36313e;\A 2: $start-here-color:				<%= @color %>;\A 3: $header-color:						$start-here-color;\A 4: $header-text-color:				lighten($start-here-color, 40%);\A 5: $why-color:								lighten($start-here-color, 55%);\A 6: $why-text-color:					lighten($start-here-color, 30%);\A 7: $why-hef-text-color:			darken($start-here-color, 8%);"; }

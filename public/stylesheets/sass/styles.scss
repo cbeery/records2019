@@ -1,0 +1,196 @@
+// $start-here-color:				#36313e;
+$start-here-color:				<%= @color %>;
+$header-color:						$start-here-color;
+$header-text-color:				lighten($start-here-color, 40%);
+$why-color:								lighten($start-here-color, 55%);
+$why-text-color:					lighten($start-here-color, 30%);
+$why-hef-text-color:			darken($start-here-color, 8%);
+$why-cb-text-color:				lighten($start-here-color, 15%);
+$why-callout-text-color:	darken($start-here-color, 58%);
+$this-week-color:					lighten($start-here-color, 25%);
+
+body {
+	background: #fff;
+}
+
+#header {
+	background: $header-color;
+	color: white;
+	h1 {
+		font-weight: bold;
+		font-size: 2em;
+	}	
+}
+
+#why {
+	background: $why-color;
+	color: $why-text-color;
+	padding: 30px 0;
+	@media (max-width: 768px) {
+		font-size: .85em;
+	}
+	p {
+		span.why { font-weight: bold; font-style: italic;}
+		span.name {
+			font-weight: bold;
+		}
+		span.hef {
+			color: $why-hef-text-color;
+		}
+		span.cb {
+			color: $why-cb-text-color;
+		}
+		span.callout {
+			font-weight: bold;
+			font-style: italic;
+		}
+	}
+}
+
+#footer {
+	padding: 60px 0;
+	background: #ddd;
+	color: #222;
+	#subfooter {
+		color: #999;
+		margin: 30px 0 0 0;
+			font-size: 1.3em;
+		p.cant-score {
+		}
+		p.no-more {
+			font-style: italic;
+		}
+	}
+}
+
+footer {
+	margin: 30px 0 0 0;
+	#hef_no_score {
+		padding: 110px 0;
+		background: $why-color;
+		color: $why-text-color;
+		font-size: 1.5em;
+		p.cant-score {
+			font-weight: bold;
+		}
+		p.no-more {
+			font-style: italic;
+		}
+	}
+	#links_and_credits {
+		padding: 30px 0;
+		text-align: center;
+		background: $header-color;
+		color: $header-text-color;
+		a {
+			color: white;
+		}
+	}
+
+}
+
+#this_week {
+	padding: 30px 0 60px 0;
+	p.listening {
+		min-height: 3em;
+	}
+}
+
+
+#last_week {
+	background: #efefef;
+	padding: 70px 0 110px 0;
+	div.info {
+		min-height: 9em;
+	}
+
+	p {
+		line-height: 1.5em;
+	}
+	.record {
+		font-weight: bold;
+		font-size: 1.5em;
+	}
+	.artist {
+		font-size: 1.2em;
+		font-weight: bold;
+		color: #666;
+	}
+	hr {
+		border-color: #ccc;
+	}
+}
+
+#third_level {
+	padding: 50px 0 0 0;
+	.third-level-item {
+		min-height: 23em;
+	}
+	span.artist {
+		font-weight: bold;
+		color: #666;
+	}
+	span.album {
+		font-style: italic;
+	}
+}
+
+#fourth_level {
+	// background: #ededef;
+	padding: 60px 0;
+	h2 {
+		color: #888;
+		font-size: 1.5em;
+	}	
+	.artist {
+		font-weight: bold;
+		color: #666;
+	}
+}
+
+.has-cover {
+	img {
+		width: 100%;
+	}	
+}
+
+
+p.commentary {
+	color: #888;
+	.who {
+		font-weight: bold;
+	}
+	.quote {
+		font-style: italic;
+	}
+}
+
+p.rate {
+	color: #bbb;
+	strong {
+		color: #888;
+		font-size: 2.2em;
+	}
+}
+
+.record {
+	font-style: italic;
+}
+.year {
+	color: #aaa;
+}
+
+td.rating {
+	text-align: right;
+	color: #ccc;
+	em {
+		font-style: normal;
+		font-weight: bold;
+		color: #666;
+	}
+}
+
+h2 {
+	border-bottom: solid 1px #ddd;
+	margin-bottom: 20px;
+}
